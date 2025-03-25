@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Warehouse - Your Ultimate Gaming Collection</title>
-    <meta name="description" content="Game Warehouse offers a curated collection of free HTML5 games. Play instantly in your browser on any device.">
+    <title>Game Warehouse - Play Slither.io Online</title>
+    <meta name="description" content="Play Slither.io online at Game Warehouse. Control your snake, eat glowing orbs, and grow longer in this addictive multiplayer game.">
     <link rel="canonical" href="https://monsterwinnerch.online/">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -27,16 +27,61 @@
             }
         }
     </script>
-    <style type="text/tailwindcss">
-        @layer components {
-            .game-card {
-                @apply bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105;
+    <style>
+        /* 游戏容器样式 */
+        .game-container {
+            @apply bg-white rounded-lg shadow-xl overflow-hidden;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 游戏iframe容器 */
+        .game-frame-container {
+            @apply relative w-full;
+            padding-top: 75%; /* 4:3 宽高比 */
+        }
+
+        /* 游戏iframe */
+        .game-frame {
+            @apply absolute top-0 left-0 w-full h-full;
+        }
+
+        /* 游戏说明卡片 */
+        .game-info-card {
+            @apply bg-white rounded-lg shadow-md p-6 mb-6;
+        }
+
+        /* 游戏标题 */
+        .game-title {
+            @apply text-3xl font-bold text-gray-800 mb-4;
+        }
+
+        /* 游戏描述 */
+        .game-description {
+            @apply text-lg text-gray-600 mb-6;
+        }
+
+        /* 游戏特点列表 */
+        .game-features {
+            @apply space-y-3;
+        }
+
+        .game-feature {
+            @apply flex items-center text-gray-700;
+        }
+
+        .game-feature svg {
+            @apply w-5 h-5 text-apple-green mr-2;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .game-container {
+                @apply mx-4;
             }
-            .game-title {
-                @apply text-lg font-bold text-apple-dark mb-1;
-            }
-            .game-desc {
-                @apply text-sm text-gray-600;
+            
+            .game-frame-container {
+                padding-top: 100%; /* 1:1 宽高比 */
             }
         }
     </style>
@@ -44,331 +89,85 @@
 <body class="bg-apple-gray min-h-screen">
     <!-- 导航栏 -->
     <nav class="bg-apple-dark text-white py-4">
-        <div class="container mx-auto px-4 md:px-8 flex justify-between items-center">
+        <div class="container mx-auto px-4 md:px-8">
             <a href="/" class="text-2xl font-bold">Game Warehouse</a>
-            <div class="hidden md:flex space-x-6">
-                <a href="#arcade" class="hover:text-apple-blue transition">Arcade</a>
-                <a href="#puzzle" class="hover:text-apple-blue transition">Puzzle</a>
-                <a href="#action" class="hover:text-apple-blue transition">Action</a>
-            </div>
         </div>
     </nav>
 
-    <!-- 英雄区域 -->
-    <header class="bg-gradient-to-r from-apple-blue to-apple-purple text-white py-16 md:py-24">
-        <div class="container mx-auto px-4 md:px-8 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">Game Warehouse</h1>
-            <p class="text-xl md:text-2xl max-w-2xl mx-auto">Your ultimate collection of free online games. Play instantly, no downloads required.</p>
+    <!-- 主要内容区域 -->
+    <main class="container mx-auto px-4 md:px-8 py-8">
+        <!-- 游戏标题和简介 -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-4">Slither.io</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Control your snake, eat glowing orbs, and grow longer in this addictive multiplayer game. Challenge other players and become the longest snake in the arena!</p>
         </div>
-    </header>
 
-    <!-- 游戏类别部分 - 街机游戏 -->
-    <section id="arcade" class="py-12 md:py-16">
-        <div class="container mx-auto px-4 md:px-8">
-            <h2 class="text-3xl font-bold mb-8 text-apple-dark">Arcade Games</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- 游戏卡片 1 -->
-                <div class="game-card">
-                    <div class="game-img h-48 bg-gray-200 relative">
-                        <img src="https://img.gamedistribution.com/1b68046348e149a89b3b7da8234152d1-512x384.jpeg" alt="Rise Up Game" class="w-full h-full object-cover">
-                        <button onclick="playGame('rise-up')" class="absolute inset-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity">
-                            <span class="bg-apple-red text-white font-bold py-2 px-4 rounded-full">Play Now</span>
-                        </button>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="game-title">Rise Up</h3>
-                        <p class="game-desc">Protect your balloon from obstacles as it rises to the top.</p>
-                    </div>
-                </div>
-
-                <!-- 游戏卡片 2 -->
-                <div class="game-card">
-                    <div class="game-img h-48 bg-gray-200 relative">
-                        <img src="https://img.gamedistribution.com/7e96d973b40d4815a5d0b201c33f479f-512x384.jpeg" alt="Om Nom Run Game" class="w-full h-full object-cover">
-                        <button onclick="playGame('om-nom-run')" class="absolute inset-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity">
-                            <span class="bg-apple-red text-white font-bold py-2 px-4 rounded-full">Play Now</span>
-                        </button>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="game-title">Om Nom Run</h3>
-                        <p class="game-desc">Help Om Nom run and collect candies in this endless runner.</p>
-                    </div>
-                </div>
-
-                <!-- 游戏卡片 3 -->
-                <div class="game-card">
-                    <div class="game-img h-48 bg-gray-200 relative">
-                        <img src="https://img.gamedistribution.com/03e49e7c76e74a1d98eb69c9ee3201d4-512x384.jpeg" alt="Giant Rush Game" class="w-full h-full object-cover">
-                        <button onclick="playGame('giant-rush')" class="absolute inset-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity">
-                            <span class="bg-apple-red text-white font-bold py-2 px-4 rounded-full">Play Now</span>
-                        </button>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="game-title">Giant Rush</h3>
-                        <p class="game-desc">Grow your character and smash through obstacles in this fun arcade game.</p>
-                    </div>
-                </div>
-
-                <!-- 游戏卡片 4 -->
-                <div class="game-card">
-                    <div class="game-img h-48 bg-gray-200 relative">
-                        <img src="https://img.gamedistribution.com/f84b5fbb5a5b4aac88383099fd5ec480-512x384.jpeg" alt="Western Sniper Game" class="w-full h-full object-cover">
-                        <button onclick="playGame('western-sniper')" class="absolute inset-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity">
-                            <span class="bg-apple-red text-white font-bold py-2 px-4 rounded-full">Play Now</span>
-                        </button>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="game-title">Western Sniper</h3>
-                        <p class="game-desc">Test your shooting skills in this Wild West themed shooter game.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 游戏类别部分 - 益智游戏 -->
-    <section id="puzzle" class="py-12 md:py-16 bg-white">
-        <div class="container mx-auto px-4 md:px-8">
-            <h2 class="text-3xl font-bold mb-8 text-apple-dark">Puzzle Games</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- 游戏卡片 1 -->
-                <div class="game-card">
-                    <div class="game-img h-48 bg-gray-200 relative">
-                        <img src="https://img.gamedistribution.com/a4643fe9ba0d440dae946d9fc9c34dbf-512x384.jpeg" alt="Element Blocks Game" class="w-full h-full object-cover">
-                        <button onclick="playGame('element-blocks')" class="absolute inset-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity">
-                            <span class="bg-apple-red text-white font-bold py-2 px-4 rounded-full">Play Now</span>
-                        </button>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="game-title">Element Blocks</h3>
-                        <p class="game-desc">Match elemental blocks to solve puzzles and progress through levels.</p>
-                    </div>
-                </div>
-
-                <!-- 游戏卡片 2 -->
-                <div class="game-card">
-                    <div class="game-img h-48 bg-gray-200 relative">
-                        <img src="https://img.gamedistribution.com/e8e32207bc334253be4f587877ef5d07-512x384.jpeg" alt="Color Fill 3D Game" class="w-full h-full object-cover">
-                        <button onclick="playGame('color-fill-3d')" class="absolute inset-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity">
-                            <span class="bg-apple-red text-white font-bold py-2 px-4 rounded-full">Play Now</span>
-                        </button>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="game-title">Color Fill 3D</h3>
-                        <p class="game-desc">Fill the board with color while avoiding obstacles in this relaxing puzzle.</p>
-                    </div>
-                </div>
-
-                <!-- 游戏卡片 3 -->
-                <div class="game-card">
-                    <div class="game-img h-48 bg-gray-200 relative">
-                        <img src="https://img.gamedistribution.com/4a3c30e602bb463da5c205b5c3bf71ae-512x384.jpeg" alt="Color Water Sort Game" class="w-full h-full object-cover">
-                        <button onclick="playGame('color-water-sort')" class="absolute inset-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity">
-                            <span class="bg-apple-red text-white font-bold py-2 px-4 rounded-full">Play Now</span>
-                        </button>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="game-title">Color Water Sort</h3>
-                        <p class="game-desc">Sort colored water in tubes to solve challenging puzzles.</p>
-                    </div>
-                </div>
-
-                <!-- 游戏卡片 4 -->
-                <div class="game-card">
-                    <div class="game-img h-48 bg-gray-200 relative">
-                        <img src="https://img.gamedistribution.com/68d31bb3e3e54b439154e96ec9e9eb9c-512x384.jpeg" alt="Spot the Cat Game" class="w-full h-full object-cover">
-                        <button onclick="playGame('spot-the-cat')" class="absolute inset-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity">
-                            <span class="bg-apple-red text-white font-bold py-2 px-4 rounded-full">Play Now</span>
-                        </button>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="game-title">Spot the Cat</h3>
-                        <p class="game-desc">Find the hidden cat in each puzzle by using your observation skills.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 游戏类别部分 - 动作游戏 -->
-    <section id="action" class="py-12 md:py-16">
-        <div class="container mx-auto px-4 md:px-8">
-            <h2 class="text-3xl font-bold mb-8 text-apple-dark">Action Games</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- 游戏卡片 1 -->
-                <div class="game-card">
-                    <div class="game-img h-48 bg-gray-200 relative">
-                        <img src="https://img.gamedistribution.com/7a33b771d7bd4b6a872255f9e1a06363-512x384.jpeg" alt="TNT Bomb Game" class="w-full h-full object-cover">
-                        <button onclick="playGame('tnt-bomb')" class="absolute inset-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity">
-                            <span class="bg-apple-red text-white font-bold py-2 px-4 rounded-full">Play Now</span>
-                        </button>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="game-title">TNT Bomb</h3>
-                        <p class="game-desc">Use bombs to destroy blocks and complete challenging levels.</p>
-                    </div>
-                </div>
-
-                <!-- 游戏卡片 2 -->
-                <div class="game-card">
-                    <div class="game-img h-48 bg-gray-200 relative">
-                        <img src="https://img.gamedistribution.com/4d3262c05c7c4b1e9bcc25c3e8f95f88-512x384.jpeg" alt="Moto X3M Game" class="w-full h-full object-cover">
-                        <button onclick="playGame('moto-x3m')" class="absolute inset-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity">
-                            <span class="bg-apple-red text-white font-bold py-2 px-4 rounded-full">Play Now</span>
-                        </button>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="game-title">Moto X3M</h3>
-                        <p class="game-desc">Perform stunts and race through challenging tracks on your motorcycle.</p>
-                    </div>
-                </div>
-
-                <!-- 游戏卡片 3 -->
-                <div class="game-card">
-                    <div class="game-img h-48 bg-gray-200 relative">
-                        <img src="https://img.gamedistribution.com/9b9f40322108402395dfe92a39253c45-512x384.jpeg" alt="Tower Crash 3D Game" class="w-full h-full object-cover">
-                        <button onclick="playGame('tower-crash-3d')" class="absolute inset-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity">
-                            <span class="bg-apple-red text-white font-bold py-2 px-4 rounded-full">Play Now</span>
-                        </button>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="game-title">Tower Crash 3D</h3>
-                        <p class="game-desc">Knock down towers with precision aiming in this physics-based game.</p>
-                    </div>
-                </div>
-
-                <!-- 游戏卡片 4 -->
-                <div class="game-card">
-                    <div class="game-img h-48 bg-gray-200 relative">
-                        <img src="https://img.gamedistribution.com/31a64d55c5b94d9d95e312a78bb01f58-512x384.jpeg" alt="Cannon Balls 3D Game" class="w-full h-full object-cover">
-                        <button onclick="playGame('cannon-balls-3d')" class="absolute inset-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity">
-                            <span class="bg-apple-red text-white font-bold py-2 px-4 rounded-full">Play Now</span>
-                        </button>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="game-title">Cannon Balls 3D</h3>
-                        <p class="game-desc">Shoot cannon balls to destroy targets in this addictive shooter game.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 游戏模态框 -->
-    <div id="gameModal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-xl w-full max-w-5xl max-h-[90vh] overflow-hidden flex flex-col">
-            <div class="flex justify-between items-center p-4 border-b">
-                <h3 id="gameModalTitle" class="text-xl font-bold text-apple-dark">Game Title</h3>
-                <button onclick="closeGameModal()" class="text-gray-500 hover:text-apple-red">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        <!-- 游戏信息卡片 -->
+        <div class="game-info-card mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Game Features</h2>
+            <div class="game-features">
+                <div class="game-feature">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                     </svg>
-                </button>
-            </div>
-            <div class="flex-1 min-h-0">
-                <iframe id="gameFrame" class="w-full h-full" frameborder="0" allow="fullscreen" allowfullscreen></iframe>
+                    Fast-paced multiplayer action
+                </div>
+                <div class="game-feature">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                    </svg>
+                    Simple controls with arrow keys
+                </div>
+                <div class="game-feature">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    Real-time multiplayer competition
+                </div>
+                <div class="game-feature">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                    </svg>
+                    Global leaderboard system
+                </div>
             </div>
         </div>
-    </div>
+
+        <!-- 游戏说明卡片 -->
+        <div class="game-info-card mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">How to Play</h2>
+            <div class="space-y-4 text-gray-600">
+                <p>1. Use arrow keys to control your snake's direction</p>
+                <p>2. Collect glowing orbs to grow longer</p>
+                <p>3. Avoid colliding with other snakes</p>
+                <p>4. Try to trap other snakes to make them crash</p>
+                <p>5. Become the longest snake to win!</p>
+            </div>
+        </div>
+
+        <!-- 游戏容器 -->
+        <div class="game-container">
+            <div class="game-frame-container">
+                <iframe 
+                    class="game-frame"
+                    src="https://poki.com/en/g/slither-io" 
+                    frameborder="0" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </main>
 
     <!-- 页脚 -->
-    <footer class="bg-apple-dark text-white py-8">
-        <div class="container mx-auto px-4 md:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <p class="text-lg font-bold">Game Warehouse</p>
-                    <p class="text-sm text-gray-400">Your Ultimate Gaming Collection</p>
-                </div>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
-                    <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
-                    <a href="#" class="text-gray-400 hover:text-white">Contact</a>
-                </div>
-            </div>
-            <div class="mt-6 text-center text-sm text-gray-400">
-                <p>&copy; 2023 Game Warehouse. All games are property of their respective owners.</p>
+    <footer class="bg-apple-dark text-white py-8 mt-12">
+        <div class="container mx-auto px-4 md:px-8 text-center">
+            <p class="text-lg font-bold mb-2">Game Warehouse</p>
+            <p class="text-sm text-gray-400">Your Ultimate Gaming Collection</p>
+            <div class="mt-4 text-sm text-gray-400">
                 <p>Website: <a href="https://monsterwinnerch.online" class="text-apple-blue hover:text-apple-pink">monsterwinnerch.online</a></p>
+                <p>&copy; 2023 Game Warehouse. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
-    <!-- JavaScript -->
-    <script>
-        // 游戏数据
-        const games = {
-            'rise-up': {
-                title: 'Rise Up',
-                src: 'https://html5.gamedistribution.com/1b68046348e149a89b3b7da8234152d1/'
-            },
-            'om-nom-run': {
-                title: 'Om Nom Run',
-                src: 'https://html5.gamedistribution.com/7e96d973b40d4815a5d0b201c33f479f/'
-            },
-            'giant-rush': {
-                title: 'Giant Rush',
-                src: 'https://html5.gamedistribution.com/03e49e7c76e74a1d98eb69c9ee3201d4/'
-            },
-            'western-sniper': {
-                title: 'Western Sniper',
-                src: 'https://html5.gamedistribution.com/f84b5fbb5a5b4aac88383099fd5ec480/'
-            },
-            'element-blocks': {
-                title: 'Element Blocks',
-                src: 'https://html5.gamedistribution.com/a4643fe9ba0d440dae946d9fc9c34dbf/'
-            },
-            'color-fill-3d': {
-                title: 'Color Fill 3D',
-                src: 'https://html5.gamedistribution.com/e8e32207bc334253be4f587877ef5d07/'
-            },
-            'color-water-sort': {
-                title: 'Color Water Sort 3D',
-                src: 'https://html5.gamedistribution.com/4a3c30e602bb463da5c205b5c3bf71ae/'
-            },
-            'spot-the-cat': {
-                title: 'Spot the Cat',
-                src: 'https://html5.gamedistribution.com/68d31bb3e3e54b439154e96ec9e9eb9c/'
-            },
-            'tnt-bomb': {
-                title: 'TNT Bomb',
-                src: 'https://html5.gamedistribution.com/7a33b771d7bd4b6a872255f9e1a06363/'
-            },
-            'moto-x3m': {
-                title: 'Moto X3M',
-                src: 'https://html5.gamedistribution.com/4d3262c05c7c4b1e9bcc25c3e8f95f88/'
-            },
-            'tower-crash-3d': {
-                title: 'Tower Crash 3D',
-                src: 'https://html5.gamedistribution.com/9b9f40322108402395dfe92a39253c45/'
-            },
-            'cannon-balls-3d': {
-                title: 'Cannon Balls 3D',
-                src: 'https://html5.gamedistribution.com/31a64d55c5b94d9d95e312a78bb01f58/'
-            }
-        };
-
-        // 打开游戏模态框
-        function playGame(gameId) {
-            const game = games[gameId];
-            if (!game) return;
-            
-            document.getElementById('gameModalTitle').textContent = game.title;
-            document.getElementById('gameFrame').src = game.src;
-            document.getElementById('gameModal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // 防止背景滚动
-        }
-
-        // 关闭游戏模态框
-        function closeGameModal() {
-            document.getElementById('gameFrame').src = '';
-            document.getElementById('gameModal').classList.add('hidden');
-            document.body.style.overflow = ''; // 恢复背景滚动
-        }
-
-        // 移动菜单切换
-        function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.classList.toggle('hidden');
-        }
-    </script>
 </body>
 </html> 
