@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Warehouse - Play Slither.io Online</title>
-    <meta name="description" content="Play Slither.io online at Game Warehouse. Control your snake, eat glowing orbs, and grow longer in this addictive multiplayer game.">
+    <title>Game Warehouse - Play 2048 Online</title>
+    <meta name="description" content="Play 2048 online at Game Warehouse. Combine the numbers and try to reach 2048 in this addictive puzzle game!">
     <link rel="canonical" href="https://monsterwinnerch.online/">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -54,11 +54,11 @@
 
         /* 游戏iframe容器 */
         .game-frame-container {
-            aspect-ratio: 4/3;
-            background: #000;
+            aspect-ratio: 1/1;  /* 2048游戏更适合1:1的比例 */
+            background: #faf8ef;
             border-radius: 0.5rem;
             margin: 0 auto;
-            max-width: 100%;
+            max-width: 600px;  /* 2048游戏不需要太大的容器 */
             overflow: hidden;
             position: relative;
         }
@@ -111,19 +111,19 @@
     <main class="container mx-auto px-4">
         <div class="game-container">
             <!-- 游戏标题和描述 -->
-            <h2 class="game-title">Slither.io</h2>
+            <h2 class="game-title">2048</h2>
             <p class="game-description">
-                Control your snake, eat glowing orbs, and grow longer in this addictive multiplayer game. 
-                Challenge other players and become the longest snake in the arena!
+                Join the numbers and get to the 2048 tile! Use your arrow keys to move the tiles. 
+                When two tiles with the same number touch, they merge into one!
             </p>
 
             <!-- 游戏框架 -->
             <div class="game-frame-container">
                 <iframe 
                     class="game-frame"
-                    src="https://slither.io" 
-                    allow="fullscreen; autoplay; camera; microphone; midi"
-                    sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation">
+                    src="https://play2048.co" 
+                    allow="fullscreen"
+                    sandbox="allow-forms allow-scripts allow-same-origin">
                 </iframe>
             </div>
         </div>
