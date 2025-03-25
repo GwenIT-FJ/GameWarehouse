@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Warehouse - Play 2048 Online</title>
-    <meta name="description" content="Play 2048 online at Game Warehouse. Combine the numbers and try to reach 2048 in this addictive puzzle game!">
+    <title>Game Warehouse - Play Snake Online</title>
+    <meta name="description" content="Play Snake online at Game Warehouse. Control the snake, eat the food, and try to achieve the highest score in this classic arcade game!">
     <link rel="canonical" href="https://monsterwinnerch.online/">
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* 主体样式 */
         body {
             background-color: #f5f5f7;
             color: #1d1d1f;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
         /* 导航栏样式 */
@@ -21,6 +21,12 @@
             background-color: #1d1d1f;
             color: white;
             padding: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
         }
 
         /* 游戏容器样式 */
@@ -54,11 +60,11 @@
 
         /* 游戏iframe容器 */
         .game-frame-container {
-            aspect-ratio: 1/1;  /* 2048游戏更适合1:1的比例 */
-            background: #faf8ef;
+            aspect-ratio: 4/3;
+            background: #000;
             border-radius: 0.5rem;
             margin: 0 auto;
-            max-width: 600px;  /* 2048游戏不需要太大的容器 */
+            max-width: 800px;
             overflow: hidden;
             position: relative;
         }
@@ -82,6 +88,15 @@
             text-align: center;
         }
 
+        .footer a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
         /* 响应式调整 */
         @media (max-width: 768px) {
             .game-container {
@@ -102,28 +117,29 @@
 <body>
     <!-- 导航栏 -->
     <nav class="nav-bar">
-        <div class="container mx-auto px-4">
-            <h1 class="text-2xl font-bold">Game Warehouse</h1>
+        <div class="container">
+            <h1 style="font-size: 1.5rem; font-weight: bold; margin: 0;">Game Warehouse</h1>
         </div>
     </nav>
 
     <!-- 主要内容 -->
-    <main class="container mx-auto px-4">
+    <main class="container">
         <div class="game-container">
             <!-- 游戏标题和描述 -->
-            <h2 class="game-title">2048</h2>
+            <h2 class="game-title">Snake Classic</h2>
             <p class="game-description">
-                Join the numbers and get to the 2048 tile! Use your arrow keys to move the tiles. 
-                When two tiles with the same number touch, they merge into one!
+                Control the snake using arrow keys, eat the food to grow longer, and avoid hitting the walls or yourself! 
+                How long can you make your snake grow?
             </p>
 
             <!-- 游戏框架 -->
             <div class="game-frame-container">
                 <iframe 
                     class="game-frame"
-                    src="https://play2048.co" 
-                    allow="fullscreen"
-                    sandbox="allow-forms allow-scripts allow-same-origin">
+                    src="https://www.gameflare.com/embed/snake-classic/"
+                    frameborder="0"
+                    scrolling="no"
+                    allowfullscreen>
                 </iframe>
             </div>
         </div>
@@ -131,12 +147,12 @@
 
     <!-- 页脚 -->
     <footer class="footer">
-        <div class="container mx-auto px-4">
-            <p class="text-lg font-bold mb-2">Game Warehouse</p>
-            <p class="text-sm opacity-75">Your Ultimate Gaming Collection</p>
-            <div class="mt-4 text-sm opacity-75">
-                <p>Website: <a href="https://monsterwinnerch.online" class="text-blue-400 hover:text-blue-300">monsterwinnerch.online</a></p>
-                <p>&copy; 2023 Game Warehouse. All rights reserved.</p>
+        <div class="container">
+            <p style="font-size: 1.125rem; font-weight: bold; margin-bottom: 0.5rem;">Game Warehouse</p>
+            <p style="font-size: 0.875rem; opacity: 0.75; margin-bottom: 1rem;">Your Ultimate Gaming Collection</p>
+            <div style="font-size: 0.875rem; opacity: 0.75;">
+                <p>Website: <a href="https://monsterwinnerch.online" style="color: #66b3ff;">monsterwinnerch.online</a></p>
+                <p style="margin-top: 0.5rem;">&copy; 2023 Game Warehouse. All rights reserved.</p>
             </div>
         </div>
     </footer>
