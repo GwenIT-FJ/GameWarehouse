@@ -126,17 +126,22 @@
     <main class="container">
         <div class="game-container">
             <!-- 游戏标题和描述 -->
-            <h2 class="game-title">Snake Classic</h2>
+            <h2 class="game-title">2048 经典版</h2>
             <p class="game-description">
-                Control the snake using arrow keys, eat the food to grow longer, and avoid hitting the walls or yourself! 
-                How long can you make your snake grow?
+                使用方向键移动方块，相同数字的方块相撞时会合并。努力获得2048分吧！
+                游戏规则：
+                1. 使用↑↓←→方向键移动方块
+                2. 相同数字的方块相撞时会合并
+                3. 每次移动后会随机出现一个新的2或4
+                4. 当无法移动时游戏结束
+                5. 获得2048分即为胜利！
             </p>
 
             <!-- 游戏框架 -->
             <div class="game-frame-container">
                 <iframe 
                     class="game-frame"
-                    src="https://www.gameflare.com/embed/snake-classic/"
+                    src="https://2048.ninja/"
                     frameborder="0"
                     scrolling="no"
                     allowfullscreen>
