@@ -10,28 +10,28 @@ const games = [
     id: 'bloxd-io',
     title: 'Bloxd.io',
     category: 'io',
-    thumbnail: 'https://images.crazygames.com/games/bloxd-io/cover-1686924066155.png',
+    thumbnail: '/games/bloxd-io.jpg',
     url: 'https://bloxd.io'
   },
   {
     id: 'draw-climber',
     title: 'Draw Climber',
     category: 'puzzle',
-    thumbnail: 'https://images.crazygames.com/draw-climber/20201124115931/draw-climber-cover?auto=format,compress&q=75&cs=strip',
+    thumbnail: '/games/draw-climber.jpg',
     url: 'https://www.crazygames.com/embed/draw-climber'
   },
   {
     id: 'count-master',
     title: 'Count Masters',
     category: 'action',
-    thumbnail: 'https://images.crazygames.com/count-masters/20220503163001/count-masters-cover?auto=format,compress&q=75&cs=strip',
+    thumbnail: '/games/countmaster.jpg',
     url: 'https://www.crazygames.com/embed/count-masters'
   },
   {
     id: '8-ball-billiards',
     title: '8 Ball Billiards',
     category: 'sports',
-    thumbnail: 'https://images.crazygames.com/8-ball-billiards-classic/20201124115928/8-ball-billiards-classic-cover?auto=format,compress&q=75&cs=strip',
+    thumbnail: '/games/8-ball-billiards.jpg',
     url: 'https://www.crazygames.com/embed/8-ball-billiards-classic'
   }
 ];

@@ -17,9 +17,9 @@ export default function Home() {
       <div className="flex-1 overflow-auto">
         <main className="p-6">
           {currentGame ? (
-            <div className="mb-6">
+            <div className="mb-6 max-w-4xl mx-auto">
               <h2 className="text-2xl font-bold mb-4">{currentGame.title}</h2>
-              <div className="w-full aspect-video bg-gray-800 rounded-lg overflow-hidden">
+              <div className="w-full aspect-[4/3] bg-gray-800 rounded-lg overflow-hidden">
                 <iframe
                   src={currentGame.url}
                   className="w-full h-full"
@@ -29,7 +29,9 @@ export default function Home() {
               </div>
             </div>
           ) : null}
-          <GameGrid />
+          <div className="max-w-7xl mx-auto">
+            <GameGrid />
+          </div>
         </main>
       </div>
     </div>
