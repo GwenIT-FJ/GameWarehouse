@@ -26,25 +26,20 @@ const games = [
 const GameGrid = () => {
   const { setCurrentGame } = useGameStore();
 
-  const handleGameClick = (game: any) => {
-    setCurrentGame(game);
-  };
-
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       {games.map((game) => (
         <div
           key={game.id}
           className="bg-gray-800 rounded-lg overflow-hidden cursor-pointer transform hover:scale-105 transition-transform duration-200"
-          onClick={() => handleGameClick(game)}
+          onClick={() => setCurrentGame(game)}
         >
           <div className="relative h-48">
             <Image
               src={game.thumbnail}
               alt={game.title}
-              layout="fill"
-              objectFit="cover"
-              className="rounded-t-lg"
+              fill
+              className="object-cover rounded-t-lg"
             />
           </div>
           <div className="p-4">
