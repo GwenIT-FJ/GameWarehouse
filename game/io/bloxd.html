@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloxd.io - Game Warehouse</title>
+    <meta name="description" content="Play Bloxd.io online at Game Warehouse. A multiplayer sandbox game with various game modes including parkour and combat.">
+    <link rel="canonical" href="https://monsterwinnerch.online/game/io/bloxd.html">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L12YFYWKLL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-L12YFYWKLL');
+    </script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .game-container {
+            aspect-ratio: 16/9;
+            max-height: 80vh;
+            position: relative;
+            background: #000;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        .game-frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-gray-800 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-xl font-bold">Game Warehouse</a>
+                </div>
+                <div>
+                    <a href="/" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold mb-4">Bloxd.io</h1>
+            <p class="text-gray-300 mb-4">
+                Bloxd.io is an exciting sandbox game with multiple game modes. In survival mode, you'll need to gather resources, craft tools, and defend against enemies to stay alive. The game features challenging obstacle courses that require precise jumping and movement skills.
+            </p>
+            <div class="bg-gray-800 p-4 rounded-lg mb-8">
+                <h2 class="text-xl font-semibold mb-2">Game Controls</h2>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-300">
+                    <li>• WASD - Move</li>
+                    <li>• Shift or double-tap W - Run</li>
+                    <li>• C, Z, \ or Caps Lock - Crouch</li>
+                    <li>• T or Enter - Chat</li>
+                    <li>• B - Open Shop</li>
+                    <li>• / - Start Command</li>
+                    <li>• O - Open Menu</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Game Container -->
+        <div class="game-container shadow-2xl">
+            <iframe 
+                class="game-frame"
+                src="https://www.crazygames.com/embed/bloxdhop-io"
+                frameborder="0"
+                scrolling="no"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </main>
+
+    <script>
+        // Add game to recently played
+        document.addEventListener('DOMContentLoaded', function() {
+            const gameData = {
+                id: 'bloxd',
+                title: 'Bloxd.io',
+                url: '/game/io/bloxd.html',
+                image: 'https://images.crazygames.com/games/bloxd-io/cover-1583231841416.png'
+            };
+            window.parent.addToRecentlyPlayed(gameData);
+        });
+    </script>
+</body>
+</html> 

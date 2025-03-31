@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Games - Game Warehouse</title>
+    <meta name="description" content="Play Word Games online at Game Warehouse. Test your vocabulary and word skills with fun and challenging word puzzles.">
+    <link rel="canonical" href="https://monsterwinnerch.online/game/puz/word-games.html">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L12YFYWKLL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-L12YFYWKLL');
+    </script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .game-container {
+            aspect-ratio: 16/9;
+            max-height: 80vh;
+            position: relative;
+            background: #000;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        .game-frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-gray-800 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-xl font-bold">Game Warehouse</a>
+                </div>
+                <div>
+                    <a href="/" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold mb-4">Word Games</h1>
+            <p class="text-gray-300 mb-4">
+                Challenge your vocabulary and word-finding skills in this engaging word puzzle game. Create words from the given letters, solve crosswords, and test your language abilities through various word-based challenges.
+            </p>
+            <div class="bg-gray-800 p-4 rounded-lg mb-8">
+                <h2 class="text-xl font-semibold mb-2">How to Play</h2>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-300">
+                    <li>• Click letters to form words</li>
+                    <li>• Find as many words as possible</li>
+                    <li>• Longer words score more points</li>
+                    <li>• Complete word challenges</li>
+                    <li>• Beat the time limit</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Game Container -->
+        <div class="game-container shadow-2xl">
+            <iframe 
+                class="game-frame"
+                src="https://www.crazygames.com/embed/word-city-crossed"
+                frameborder="0"
+                scrolling="no"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </main>
+
+    <script>
+        // Add game to recently played
+        document.addEventListener('DOMContentLoaded', function() {
+            const gameData = {
+                id: 'word-games',
+                title: 'Word Games',
+                url: '/game/puz/word-games.html',
+                image: 'https://images.crazygames.com/games/word-city-crossed/cover-1583234704149.png'
+            };
+            window.parent.addToRecentlyPlayed(gameData);
+        });
+    </script>
+</body>
+</html> 

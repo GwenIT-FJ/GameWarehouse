@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Masters: Stickman Games - Game Warehouse</title>
+    <meta name="description" content="Play Count Masters: Stickman Games online at Game Warehouse. Lead your stickman army through exciting challenges and battles.">
+    <link rel="canonical" href="https://monsterwinnerch.online/game/io/count-masters.html">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L12YFYWKLL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-L12YFYWKLL');
+    </script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .game-container {
+            aspect-ratio: 16/9;
+            max-height: 80vh;
+            position: relative;
+            background: #000;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        .game-frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-gray-800 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-xl font-bold">Game Warehouse</a>
+                </div>
+                <div>
+                    <a href="/" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold mb-4">Count Masters: Stickman Games</h1>
+            <p class="text-gray-300 mb-4">
+                Count Masters is an exciting crowd runner game where you lead an army of stickmen through various challenges. Collect multipliers to grow your army and face off against enemy crowds in epic battles. Can you become the ultimate crowd master?
+            </p>
+            <div class="bg-gray-800 p-4 rounded-lg mb-8">
+                <h2 class="text-xl font-semibold mb-2">How to Play</h2>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-300">
+                    <li>• Drag left/right to move your crowd</li>
+                    <li>• Collect multipliers to grow your army</li>
+                    <li>• Battle enemy crowds</li>
+                    <li>• Avoid obstacles</li>
+                    <li>• Reach the finish line with the most stickmen</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Game Container -->
+        <div class="game-container shadow-2xl">
+            <iframe 
+                class="game-frame"
+                src="https://www.crazygames.com/embed/count-masters-stickman-games"
+                frameborder="0"
+                scrolling="no"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </main>
+
+    <script>
+        // Add game to recently played
+        document.addEventListener('DOMContentLoaded', function() {
+            const gameData = {
+                id: 'count-masters',
+                title: 'Count Masters',
+                url: '/game/io/count-masters.html',
+                image: 'https://images.crazygames.com/count-masters-stickman-games/20230509161347/count-masters-stickman-games-cover?auto=format%2Ccompress&q=75&cs=strip&w=1200'
+            };
+            window.parent.addToRecentlyPlayed(gameData);
+        });
+    </script>
+</body>
+</html> 

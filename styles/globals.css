@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+.game-card {
+    /* 移除悬停动画效果 */
+}
+.game-slider {
+    scroll-behavior: smooth;
+}
+.game-slider::-webkit-scrollbar {
+    display: none;
+}
+.slider-button {
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+.game-slider-container:hover .slider-button {
+    opacity: 1;
+} 
