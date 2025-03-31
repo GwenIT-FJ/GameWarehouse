@@ -1,7 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['img.crazygames.com'], // 允许从 CrazyGames 加载图片
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'img.crazygames.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.crazygames.com',
+        pathname: '/**',
+      }
+    ],
   },
   async headers() {
     return [

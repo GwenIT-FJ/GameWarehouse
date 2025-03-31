@@ -10,17 +10,30 @@ const games = [
     id: 'bloxd-io',
     title: 'Bloxd.io',
     category: 'io',
-    thumbnail: '/games/bloxd-io.jpg',
+    thumbnail: 'https://images.crazygames.com/games/bloxd-io/cover-1686924066155.png',
     url: 'https://bloxd.io'
   },
   {
     id: 'draw-climber',
     title: 'Draw Climber',
     category: 'puzzle',
-    thumbnail: '/games/draw-climber.jpg',
-    url: 'https://www.crazygames.com/game/draw-climber'
+    thumbnail: 'https://images.crazygames.com/draw-climber/20201124115931/draw-climber-cover?auto=format,compress&q=75&cs=strip',
+    url: 'https://www.crazygames.com/embed/draw-climber'
   },
-  // 可以添加更多游戏
+  {
+    id: 'count-master',
+    title: 'Count Masters',
+    category: 'action',
+    thumbnail: 'https://images.crazygames.com/count-masters/20220503163001/count-masters-cover?auto=format,compress&q=75&cs=strip',
+    url: 'https://www.crazygames.com/embed/count-masters'
+  },
+  {
+    id: '8-ball-billiards',
+    title: '8 Ball Billiards',
+    category: 'sports',
+    thumbnail: 'https://images.crazygames.com/8-ball-billiards-classic/20201124115928/8-ball-billiards-classic-cover?auto=format,compress&q=75&cs=strip',
+    url: 'https://www.crazygames.com/embed/8-ball-billiards-classic'
+  }
 ];
 
 const GameGrid = () => {
@@ -40,6 +53,7 @@ const GameGrid = () => {
               alt={game.title}
               fill
               className="object-cover rounded-t-lg"
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
             />
           </div>
           <div className="p-4">
